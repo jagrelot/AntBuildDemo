@@ -48,7 +48,7 @@ public class ScriptDemo {
 		WebElement  acctName;
 		WebElement      save;
 		int 	   count = 0;
-		WebDriverWait wait = new WebDriverWait(chromeDriver, 40);
+		WebDriverWait wait = new WebDriverWait(chromeDriver, 100);
 		ArrayList<String> acctsToCreate = new ArrayList<String>();
 		acctsToCreate.add("Test Account TestNG - 1 - Jenkins EC2-ANT");
 		acctsToCreate.add("Test Account TestNG - 2 - Jenkins EC2 ANT");
