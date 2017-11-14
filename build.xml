@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<project name="Refresh_Manual_Steps" default="testng" basedir=".">
+	
+	<property name="class.dir" value="bin" />
+	<property name="src.dir" value="src" />
+	<property name="lib.dir" value="libs" />
+	<property name="report.dir" value="test-output" />
+	
+	<path id="classpath">
+	        <fileset dir="libs">
+	            <include name="**/*.jar"/>
+	         </fileset>
+	        <pathelement path="${class.dir}"/>
+	 </path>
+	
+	<taskdef name="TestNG-Ant" classpathref="classpath" classname="org.testng.TestNGAntTask"></taskdef>
+	
+<target name="clean">
+  	<delete dir="${class.dir}"/>
+  	<delete dir="${report.dir}"/>
+</target>
+	
+<target name="init" depends="clean">
+	<mkdir dir="${class.dir}"/>
+    <copy includeemptydirs="true" todir="${class.dir}">
+        <fileset dir="${src.dir}">
+            <exclude name="**/*.java"/>
+        	<exclude name="**/*.launch"/>
+        </fileset>
+    </copy>
+</target>
+	
+<target name="compile" depends="init">
+		<javac classpathref="classpath" srcdir="src" destdir="bin" includeantruntime="true" compiler="modern"></javac>
+</target>
+	
+<target name="testng" depends="compile">
+			<TestNG-Ant outputdir="test-output" classpathref="classpath">
+				<xmlfileset dir="." includes="testng.xml"/>
+			</TestNG-Ant>
+</target>				
+</project>
