@@ -20,7 +20,7 @@ public class ScriptDemo {
 	@BeforeTest
 	public void beforeTestsetUp(){
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/Driver/chromedriver");
 		chromeDriver = new ChromeDriver();
 	}
 	
