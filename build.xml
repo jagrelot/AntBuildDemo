@@ -22,7 +22,7 @@
 	
 <target name="init" depends="clean">
 	<mkdir dir="${class.dir}"/>
-    <copy includeemptydirs="true" todir="${class.dir}">
+    <copy includeemptydirs="false" todir="${class.dir}">
         <fileset dir="${src.dir}">
             <exclude name="**/*.java"/>
         	<exclude name="**/*.launch"/>
