@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-<project name="Refresh_Manual_Steps" default="testng" basedir=".">
+<project name="AntBuildDemo" default="testng" basedir=".">
 	
 	<property name="class.dir" value="bin" />
 	<property name="src.dir" value="src" />
@@ -15,7 +13,7 @@
 	        <pathelement path="${class.dir}"/>
 	 </path>
 	
-	<taskdef name="TestNG-Ant" classpathref="classpath" classname="org.testng.TestNGAntTask"></taskdef>
+<taskdef name="TestNG-Ant" classpathref="classpath" classname="org.testng.TestNGAntTask"></taskdef>
 	
 <target name="clean">
   	<delete dir="${class.dir}"/>
