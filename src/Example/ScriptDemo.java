@@ -36,7 +36,7 @@ public class ScriptDemo {
 		passWord = chromeDriver.findElement(By.cssSelector("#password"));
 		login    = chromeDriver.findElement(By.cssSelector("#Login"));
 		userName.sendKeys("jagrelot@orgdemo.com");
-		passWord.sendKeys("acumen321");
+		passWord.sendKeys("qWaG131o");
 		login.click();
 	
 	}
