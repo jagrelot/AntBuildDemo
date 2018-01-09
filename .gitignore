@@ -1,3 +1,4 @@
 # testngreports
-config.properties
 test-output/
+# properties
+config.properties
