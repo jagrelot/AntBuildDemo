@@ -26,7 +26,7 @@ public class ScriptDemo {
 		
 		System.setProperty("webdriver.chrome.driver", "/Driver/chromedriver");
 		chromeDriver = new ChromeDriver();	
-		InputStream input = new FileInputStream("/var/jenkins/workspace/'ANT Build Demo'/config.properties");
+		InputStream input = new FileInputStream("/var/jenkins/workspace/'ANTBuildDemo'/config.properties");
 		properties.load(input);
 		
 		//"\\Users\\jagrelot\\workspace\\AntBuildDemo\\config.properties"
