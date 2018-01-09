@@ -81,30 +81,30 @@ public class ScriptDemo {
 
 	}
 	
-	@Test(priority=3, description="Sample Script")
-	public void runScript(){
-		WebElement    devConsole;
-		WebDriverWait wait = new WebDriverWait(chromeDriver, 40);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#userNav-arrow"))).click();
-		devConsole = chromeDriver.findElement(By.cssSelector("a.debugLogLink.menuButtonMenuLink"));
-		devConsole.click();
-	    
-    	String salesForceWindow = chromeDriver.getWindowHandle();
-		//String scriptWindow;
-		Set<String> windows = chromeDriver.getWindowHandles();
-		for(String x : windows){
-			if(x.equals(salesForceWindow) == false){
-				chromeDriver.switchTo().window(x);
-				break;
-			}
-		}
-		
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#debugMenuEntry"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#openExecuteAnonymousWindow-textEl"))).click();
-		WebElement textArea;
-		textArea = chromeDriver.findElement(By.cssSelector("cm-word"));
-		textArea.clear();
-    	textArea.sendKeys("Jose Agrelot");
-	}
+//	@Test(priority=3, description="Sample Script")
+//	public void runScript(){
+//		WebElement    devConsole;
+//		WebDriverWait wait = new WebDriverWait(chromeDriver, 40);
+//		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#userNav-arrow"))).click();
+//		devConsole = chromeDriver.findElement(By.cssSelector("a.debugLogLink.menuButtonMenuLink"));
+//		devConsole.click();
+//	    
+//    	String salesForceWindow = chromeDriver.getWindowHandle();
+//		//String scriptWindow;
+//		Set<String> windows = chromeDriver.getWindowHandles();
+//		for(String x : windows){
+//			if(x.equals(salesForceWindow) == false){
+//				chromeDriver.switchTo().window(x);
+//				break;
+//			}
+//		}
+//		
+//		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#debugMenuEntry"))).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#openExecuteAnonymousWindow-textEl"))).click();
+//		WebElement textArea;
+//		textArea = chromeDriver.findElement(By.cssSelector("cm-word"));
+//		textArea.clear();
+//    	textArea.sendKeys("Jose Agrelot");
+//	}
 
 }
