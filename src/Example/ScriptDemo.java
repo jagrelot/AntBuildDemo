@@ -27,12 +27,7 @@ public class ScriptDemo {
 		System.setProperty("webdriver.chrome.driver", "/Driver/chromedriver");
 		chromeDriver = new ChromeDriver();	
 		InputStream input = new FileInputStream("/var/lib/jenkins/workspace/ANT Build Demo/config.properties");
-		properties.load(input);
-		
-		//"\\Users\\jagrelot\\workspace\\AntBuildDemo\\config.properties"
-		//"/var/jenkins/workspace/ANT Build Demo/config.properties"
-		//System.setProperty("webdriver.chrome.driver", "\\Driver\\chromedriver.exe");
-	
+		properties.load(input);	
 	}
 	
 	@Test(priority=1,description="Verify Login")
