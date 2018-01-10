@@ -24,15 +24,10 @@ public class ScriptDemo {
 	@BeforeTest
 	public void beforeTestsetUp() throws IOException{
 		
-		System.setProperty("webdriver.chrome.driver", "/Driver/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "\\Driver\\chromedriver.exe");
 		chromeDriver = new ChromeDriver();	
-		InputStream input = new FileInputStream("/var/lib/jenkins/workspace/ANT Build Demo/config.properties");
+		InputStream input = new FileInputStream("\\Users\\jagrelot\\workspace\\AntBuildDemo\\config.properties");
 		properties.load(input);
-		
-		//"\\Users\\jagrelot\\workspace\\AntBuildDemo\\config.properties"
-		//"/var/jenkins/workspace/ANT Build Demo/config.properties"
-		//System.setProperty("webdriver.chrome.driver", "\\Driver\\chromedriver.exe");
-	
 	}
 	
 	@Test(priority=1,description="Verify Login")
