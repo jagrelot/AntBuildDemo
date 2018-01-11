@@ -2,3 +2,5 @@
 test-output/
 # properties
 config.properties
+#Compiled class files
+*.class
