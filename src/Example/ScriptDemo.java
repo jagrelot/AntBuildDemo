@@ -94,7 +94,7 @@ public class ScriptDemo {
 		url = "http://seleniumdriverexample.com";
 		namedCred.sendKeys(url);
 		Assert.assertEquals(namedCred.getText(), "http://seleniumdriverexample.com", "The named credential for this enviroment is not correct");
-
+		System.out.println("Named Credential was updated to" + url);
 		save = chromeDriver.findElement(By.cssSelector("td.pbButton > input:first-child"));
 		save.click();		
 	}
