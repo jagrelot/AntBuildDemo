@@ -19,15 +19,15 @@ import org.testng.annotations.Test;
 public class ScriptDemo {
     
 	Properties properties = new Properties();
-	public WebDriver chromeDriver;
+	public static WebDriver chromeDriver;
 
 	@BeforeTest
 	public void beforeTestsetUp() throws IOException{
 		
-		System.setProperty("webdriver.chrome.driver", "/Driver/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "\\Driver\\chromedriver.exe");
 		chromeDriver = new ChromeDriver();	
-		InputStream input = new FileInputStream("/var/lib/jenkins/workspace/ANT Build Demo/config.properties");
-		properties.load(input);	
+		InputStream input = new FileInputStream("\\Users\\jagrelot\\workspace\\AntBuildDemo\\config.properties");
+		properties.load(input);
 	}
 	
 	@Test(priority=1,description="Verify Login")
@@ -74,6 +74,29 @@ public class ScriptDemo {
 		
 		Assert.assertEquals(count, 2, "Error: The number of accounts created does not match");
 
+	}
+	
+	@Test(priority=3, description="Update and Verify Named Credentials")
+	public static void updateNamedCredentials(){
+
+		WebElement      edit;
+		WebElement namedCred;
+		WebElement      save;
+		String           url;
+		WebDriverWait wait = new WebDriverWait(chromeDriver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#setupLink"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#Security_font"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#NamedCredential_font"))).click();
+		edit = chromeDriver.findElement(By.cssSelector("td.actionColumn > a:first-child"));
+		edit.click();
+		namedCred = chromeDriver.findElement(By.id("namedCredential:NamedCredentialForm:thePageBlock:mainBlockSection:EndpointSection:Endpoint"));
+		namedCred.clear();
+		url = "http://seleniumdriverexample.com";
+		namedCred.sendKeys(url);
+		Assert.assertEquals(namedCred.getText(), "http://seleniumdriverexample.com", "The named credential for this enviroment is not correct");
+
+		save = chromeDriver.findElement(By.cssSelector("td.pbButton > input:first-child"));
+		save.click();		
 	}
 	
 //	@Test(priority=3, description="Sample Script")
