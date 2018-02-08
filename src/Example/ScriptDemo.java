@@ -47,7 +47,13 @@ public class ScriptDemo {
 	
 	}
 	
-	@Test(priority=2, description="Create Accounts in Salesforce")
+	@Test(priority=2)
+	public void closeOverlay(){
+		WebDriverWait wait = new WebDriverWait(chromeDriver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#tryLexDialogX"))).click();	
+	}
+	
+	@Test(priority=3, description="Create Accounts in Salesforce")
 	public void createAccounts(){
 		
 		WebElement    newBtn;
@@ -76,7 +82,7 @@ public class ScriptDemo {
 
 	}
 	
-	@Test(priority=3, description="Update and Verify Named Credentials")
+	@Test(priority=4, description="Update and Verify Named Credentials")
 	public static void updateNamedCredentials(){
 
 		WebElement      edit;
